@@ -41,6 +41,17 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+        - name: Check build output
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files:"
+          ls -la
+          echo "OUT:"
+          ls -la out || true
+          echo "DIST:"
+          ls -la dist || true
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
